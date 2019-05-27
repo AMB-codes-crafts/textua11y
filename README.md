@@ -1,0 +1,1 @@
+![Demonstration of the app's first version](/src/images/v1.gif)
