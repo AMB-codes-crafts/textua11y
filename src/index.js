@@ -46,11 +46,11 @@ class App extends React.Component {
           color: this.state.textColor,
           backgroundColor: this.state.backgroundColor
         }}>
-          <h1>This is some stuff</h1>
+          <h1>Cupcake ipsum dolor sit amet</h1>
           <p>Cupcake ipsum dolor sit amet caramels. Cake tootsie roll candy canes oat cake dragée chocolate bar. Danish pudding chocolate cake. Wafer jelly soufflé cotton candy gingerbread carrot cake gingerbread topping topping. Dragée jelly-o biscuit pie jelly-o chocolate. Jelly-o brownie liquorice croissant dessert oat cake brownie cake sweet. Toffee sugar plum soufflé chocolate chocolate cake sweet carrot cake candy. Oat cake gummi bears macaroon jelly-o tootsie roll fruitcake jelly beans jelly-o toffee. Candy canes soufflé cheesecake croissant sweet chupa chups pastry. Liquorice gummies croissant liquorice candy marshmallow gummi bears bonbon jelly-o. Muffin sugar plum donut biscuit dessert pie carrot cake croissant. Fruitcake chocolate cake halvah muffin.</p>
-          <h2>This is some stuff</h2>
+          <h2>Cupcake ipsum dolor sit amet</h2>
           <p>Cupcake ipsum dolor sit amet caramels. Cake tootsie roll candy canes oat cake dragée chocolate bar. Danish pudding chocolate cake. Wafer jelly soufflé cotton candy gingerbread carrot cake gingerbread topping topping. Dragée jelly-o biscuit pie jelly-o chocolate. Jelly-o brownie liquorice croissant dessert oat cake brownie cake sweet. Toffee sugar plum soufflé chocolate chocolate cake sweet carrot cake candy. Oat cake gummi bears macaroon jelly-o tootsie roll fruitcake jelly beans jelly-o toffee. Candy canes soufflé cheesecake croissant sweet chupa chups pastry. Liquorice gummies croissant liquorice candy marshmallow gummi bears bonbon jelly-o. Muffin sugar plum donut biscuit dessert pie carrot cake croissant. Fruitcake chocolate cake halvah muffin.</p>
-          <h3>This is some stuff</h3>
+          <h3>Cupcake ipsum dolor sit amet</h3>
           <p>Cupcake ipsum dolor sit amet caramels. Cake tootsie roll candy canes oat cake dragée chocolate bar. Danish pudding chocolate cake. Wafer jelly soufflé cotton candy gingerbread carrot cake gingerbread topping topping. Dragée jelly-o biscuit pie jelly-o chocolate. Jelly-o brownie liquorice croissant dessert oat cake brownie cake sweet. Toffee sugar plum soufflé chocolate chocolate cake sweet carrot cake candy. Oat cake gummi bears macaroon jelly-o tootsie roll fruitcake jelly beans jelly-o toffee. Candy canes soufflé cheesecake croissant sweet chupa chups pastry. Liquorice gummies croissant liquorice candy marshmallow gummi bears bonbon jelly-o. Muffin sugar plum donut biscuit dessert pie carrot cake croissant. Fruitcake chocolate cake halvah muffin.</p>
         </div>
       </div>
