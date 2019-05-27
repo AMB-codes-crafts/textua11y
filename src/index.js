@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 import ColorPicker from './components/color-picker'
 
+require('typeface-lora');
+require('typeface-roboto');
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -16,7 +19,7 @@ class App extends React.Component {
     return (
       <div>
         <div id="sidebar">
-          <h1>a11y Color Contrast Helper</h1>
+          <h1>textua11y</h1>
           <p>Are my color choices accessible?</p>
 
           <hr />
