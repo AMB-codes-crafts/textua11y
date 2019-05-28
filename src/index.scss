@@ -75,3 +75,13 @@ p {
     margin: 8px 0 12px 0;
   }
 }
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  padding: 0px 8px;
+
+  td {
+    width: 30%;
+  }
+}
