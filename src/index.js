@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 import ColorPicker from './components/color-picker'
 import { MdCheck, MdClose} from 'react-icons/md';
+import { register } from './serviceWorker';
 
 require('typeface-lora');
 require('typeface-roboto');
@@ -143,3 +144,6 @@ ReactDOM.render(
   <App />,
   document.getElementById('root')
 );
+
+// register a service worker
+register();
