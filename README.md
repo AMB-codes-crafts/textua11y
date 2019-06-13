@@ -8,4 +8,9 @@ I believe we can all do better to make the web more accessible to people who nee
 
 
 ## GIF Demonstration
-![Demonstration of the app's first version](/src/images/v1.gif)
+![Demonstration of the app's first version](/src/images/current.gif)
+
+## Updates
+2019.06.13
+- users can cycle through color pickers
+- #sidebar and #contents scroll independently
