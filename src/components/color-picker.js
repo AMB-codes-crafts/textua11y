@@ -1,27 +1,36 @@
 import React from 'react';
 import colors from '../colors.json';
+import { MdRefresh } from 'react-icons/md';
 
 class ColorPicker extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       currentSetting: [null, null, null],
+      currentStep: 0,
     };
   }
 
   handleClick(selection) {
+    if (selection === null || selection === undefined) {
+      this.setState({
+        currentSetting: [null, null, null],
+        currentStep: 0,
+      })
+      return;
+    }
+
     var currentSetting = this.state.currentSetting;
-    if (this.state.currentSetting[0] === null) {
-      currentSetting[0] = selection;
-    } else if (this.state.currentSetting[1] === null) {
-      currentSetting[1] = selection;
-    } else if (this.state.currentSetting[2] === null) {
-      currentSetting[2] = selection;
+    var currentStep = this.state.currentStep;
+
+    currentSetting[currentStep % 3] = selection;
+    if (currentStep % 3 === 2) {
       this.props.callback(this.getCurrentColorHash());
     }
 
     this.setState({
       currentSetting: currentSetting,
+      currentStep: currentStep + 1,
     });
   }
 
@@ -57,6 +66,41 @@ class ColorPicker extends React.Component {
     return color.name + ' ' + tone.tone + ' // ' + shade;
   }
 
+  getTextColor(hex_color) {
+    var red_hex = hex_color.substring(1, 3);
+    var green_hex = hex_color.substring(3, 5);
+    var blue_hex = hex_color.substring(5, 7);
+  
+    var red = parseInt(red_hex, 16) / 255.0;
+    if (red <= 0.03928) {
+      red = red / 12.92;
+    } else {
+      red = Math.pow(((red + 0.055) / 1.055), 2.4);
+    }
+  
+    var green = parseInt(green_hex, 16) / 255.0;
+    if (green <= 0.03928) {
+      green = green / 12.92;
+    } else {
+      green = Math.pow(((green + 0.055) / 1.055), 2.4);
+    }
+  
+    var blue = parseInt(blue_hex, 16) / 255.0;
+    if (blue <= 0.03928) {
+      blue = blue / 12.92;
+    } else {
+      blue = Math.pow(((blue + 0.055) / 1.055), 2.4);
+    }
+  
+    var luminance = 0.2126 * red + 0.7152 * green + 0.0722 * blue;
+  
+    if (luminance > 0.179) {
+      return '#000000';
+    } else {
+      return '#ffffff';
+    }
+  }
+
   render() {
     var arrayToUse;
     var status;
@@ -77,9 +121,17 @@ class ColorPicker extends React.Component {
     } else {
       return <div className="color-picker">
         <p>{this.getCurrentColorName()}</p>
-        <div className="selected-color" style={{
-          backgroundColor: this.getCurrentColorHash(),
-        }}></div>
+        <button
+          className="selected-color"
+          onClick={() => this.handleClick()}
+          style={{
+            backgroundColor: this.getCurrentColorHash(),
+          }}
+        >
+          <MdRefresh className="refresh-icon" style={{
+            color: this.getTextColor(this.getCurrentColorHash()),
+          }} />
+        </button>
       </div>
     }
 
