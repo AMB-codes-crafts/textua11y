@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import ColorPicker from './components/color-picker'
+import ColorPicker from './components/color-picker';
 import { MdCheck, MdClose} from 'react-icons/md';
 
 require('typeface-lora');
