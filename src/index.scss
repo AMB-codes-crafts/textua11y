@@ -35,7 +35,7 @@ p {
   margin-top: -4px;
   
   border: none;
-  outline: none;
+  outline-color: black;
 
   cursor: pointer;
 }
@@ -44,6 +44,18 @@ p {
   width: 100px;
   height: 100px;
   margin: 0 auto;
+  
+  border: none;
+  outline-color: black;
+
+  .refresh-icon {
+    font-size: 24px;
+    margin: 38px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 
 #sidebar {
@@ -55,6 +67,8 @@ p {
   border-right: 1px solid black;
   text-align: center;
   padding: 24px 0;
+
+  overflow-y: auto;
 
   hr {
     border: none;
@@ -70,6 +84,8 @@ p {
   right: 0;
   bottom: 0;
   padding: 20px;
+
+  overflow-y: auto;
 
   p {
     margin: 8px 0 12px 0;
