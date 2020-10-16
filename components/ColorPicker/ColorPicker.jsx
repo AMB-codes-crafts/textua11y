@@ -79,18 +79,10 @@ const ColorPicker = ({ title, onChangeCallback }) => {
     <div className={styles.ColorPicker}>
       <h2>{title}</h2>
       <p>{subtitle}</p>
-      <div
-        style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}
-      >
+      <div>
         {buttonsToRender.map(({ backgroundColor, name, tone, shade }) => (
           <button
-            style={{
-              width: 50,
-              height: 50,
-              backgroundColor: backgroundColor,
-              border: 'none',
-              cursor: 'pointer',
-            }}
+            style={{ backgroundColor }}
             onClick={() => {
               if (!selectedColor) {
                 setSelectedColor(name);
