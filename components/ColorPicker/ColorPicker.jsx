@@ -1,8 +1,9 @@
 import { useState } from 'react';
+import { Icon } from '../../components';
 import colors from './colors.json';
 import styles from './ColorPicker.module.scss';
 
-const ColorPicker = ({ title }) => {
+const ColorPicker = ({ title, onChangeCallback }) => {
   const [selectedColor, setSelectedColor] = useState();
   const [selectedTone, setSelectedTone] = useState();
   const [selectedShade, setSelectedShade] = useState();
@@ -53,6 +54,7 @@ const ColorPicker = ({ title }) => {
               height: 50,
               backgroundColor: backgroundColor,
               border: 'none',
+              cursor: 'pointer',
             }}
             onClick={() => {
               if (!selectedColor) {
@@ -61,13 +63,16 @@ const ColorPicker = ({ title }) => {
                 setSelectedTone(tone);
               } else if (!selectedShade) {
                 setSelectedShade(shade);
+                onChangeCallback(backgroundColor);
               } else {
                 setSelectedColor();
                 setSelectedTone();
                 setSelectedShade();
               }
             }}
-          ></button>
+          >
+            {selectedShade && <Icon name="redo-alt" />}
+          </button>
         ))}
       </div>
     </div>
