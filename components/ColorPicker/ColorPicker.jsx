@@ -28,8 +28,8 @@ const ColorPicker = ({ title, onChangeCallback }) => {
     const color = colors.find((color) => color.name === selectedColor);
     const tone = color.tones.find(({ tone }) => tone === selectedTone);
     buttonsToRender = [
-      { shade: 'default', backgroundColor: tone.default },
       { shade: 'light', backgroundColor: tone.light },
+      { shade: 'default', backgroundColor: tone.default },
       { shade: 'dark', backgroundColor: tone.dark },
     ];
   } else {
