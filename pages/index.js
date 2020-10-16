@@ -88,7 +88,7 @@ const Index = () => {
             <p>
               <Icon
                 name={bodiesPass ? 'check' : 'times'}
-                color={headingsPass ? '#2e7d32' : '#b71c1c'}
+                color={bodiesPass ? '#2e7d32' : '#b71c1c'}
               />
             </p>
           </div>
