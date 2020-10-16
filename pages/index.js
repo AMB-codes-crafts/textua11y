@@ -1,9 +1,70 @@
 import { useState } from 'react';
-import { ColorPicker } from '../components';
+import { ColorPicker, Icon } from '../components';
 
 const Index = () => {
-  const [textColor, setTextColor] = useState('black');
-  const [backgroundColor, setBackgroundColor] = useState('white');
+  const [textColor, setTextColor] = useState('#000000');
+  const [backgroundColor, setBackgroundColor] = useState('#ffffff');
+
+  const getRelativeLumninance = (RGB) => {
+    var RsRGB = RGB[0] / 255;
+    var GsRGB = RGB[1] / 255;
+    var BsRGB = RGB[2] / 255;
+
+    var R;
+    if (RsRGB <= 0.03928) {
+      R = RsRGB / 12.92;
+    } else {
+      R = ((RsRGB + 0.055) / 1.055) ** 2.4;
+    }
+
+    var G;
+    if (GsRGB <= 0.03928) {
+      G = GsRGB / 12.92;
+    } else {
+      G = ((GsRGB + 0.055) / 1.055) ** 2.4;
+    }
+
+    var B;
+    if (BsRGB <= 0.03928) {
+      B = BsRGB / 12.92;
+    } else {
+      B = ((BsRGB + 0.055) / 1.055) ** 2.4;
+    }
+
+    return 0.2126 * R + 0.7152 * G + 0.0722 * B;
+  };
+
+  const getContrastRatio = () => {
+    var textRGB = [
+      parseInt('0x' + textColor.substr(1, 2)),
+      parseInt('0x' + textColor.substr(3, 2)),
+      parseInt('0x' + textColor.substr(5, 2)),
+    ];
+    var textLumninance = getRelativeLumninance(textRGB);
+
+    var backgroundRGB = [
+      parseInt('0x' + backgroundColor.substr(1, 2)),
+      parseInt('0x' + backgroundColor.substr(3, 2)),
+      parseInt('0x' + backgroundColor.substr(5, 2)),
+    ];
+    var backgroundLumninance = getRelativeLumninance(backgroundRGB);
+
+    var lighter;
+    var darker;
+    if (textLumninance < backgroundLumninance) {
+      lighter = textLumninance;
+      darker = backgroundLumninance;
+    } else {
+      lighter = backgroundLumninance;
+      darker = textLumninance;
+    }
+
+    return Math.round(((darker + 0.05) / (lighter + 0.05)) * 100) / 100;
+  };
+
+  const ratio = getContrastRatio();
+  const headingsPass = ratio >= 3.0;
+  const bodiesPass = ratio >= 4.5;
 
   return (
     <div id="page">
@@ -15,11 +76,21 @@ const Index = () => {
         <div id="checks">
           <div>
             <p>headings</p>
-            <p>icon</p>
+            <p>
+              <Icon
+                name={headingsPass ? 'check' : 'times'}
+                color={headingsPass ? '#2e7d32' : '#b71c1c'}
+              />
+            </p>
           </div>
           <div>
             <p>bodies</p>
-            <p>icon</p>
+            <p>
+              <Icon
+                name={bodiesPass ? 'check' : 'times'}
+                color={headingsPass ? '#2e7d32' : '#b71c1c'}
+              />
+            </p>
           </div>
         </div>
         <div>
