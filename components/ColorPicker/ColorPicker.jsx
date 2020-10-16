@@ -80,29 +80,32 @@ const ColorPicker = ({ title, onChangeCallback }) => {
       <h2>{title}</h2>
       <p>{subtitle}</p>
       <div>
-        {buttonsToRender.map(({ backgroundColor, name, tone, shade }) => (
-          <button
-            style={{ backgroundColor }}
-            onClick={() => {
-              if (!selectedColor) {
-                setSelectedColor(name);
-              } else if (!selectedTone) {
-                setSelectedTone(tone);
-              } else if (!selectedShade) {
-                setSelectedShade(shade);
-                onChangeCallback(backgroundColor);
-              } else {
-                setSelectedColor();
-                setSelectedTone();
-                setSelectedShade();
-              }
-            }}
-          >
-            {selectedShade && (
-              <Icon name="redo-alt" color={getIconColor(backgroundColor)} />
-            )}
-          </button>
-        ))}
+        {buttonsToRender.map(
+          ({ backgroundColor, name, tone, shade }, index) => (
+            <button
+              key={`colorButton-${index}-${new Date().getTime()}`}
+              style={{ backgroundColor }}
+              onClick={() => {
+                if (!selectedColor) {
+                  setSelectedColor(name);
+                } else if (!selectedTone) {
+                  setSelectedTone(tone);
+                } else if (!selectedShade) {
+                  setSelectedShade(shade);
+                  onChangeCallback(backgroundColor);
+                } else {
+                  setSelectedColor();
+                  setSelectedTone();
+                  setSelectedShade();
+                }
+              }}
+            >
+              {selectedShade && (
+                <Icon name="redo-alt" color={getIconColor(backgroundColor)} />
+              )}
+            </button>
+          )
+        )}
       </div>
     </div>
   );
