@@ -1,41 +1,15 @@
 {
   "name": "textua11y",
-  "homepage": "https://ashleemboyer.github.io/textua11y",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "node-sass": "^4.12.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-icons": "^3.7.0",
-    "react-scripts": "3.0.1",
-    "typeface-lora": "0.0.72",
-    "typeface-roboto": "0.0.54"
-  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "build": "next build",
+    "dev": "next dev",
+    "export": "next export",
+    "start": "next start"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "gh-pages": "^2.0.1"
+  "dependencies": {
+    "next": "^9.5.5",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "sass": "^1.27.0"
   }
 }
