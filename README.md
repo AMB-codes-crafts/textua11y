@@ -10,10 +10,6 @@ textua11y is a web application that lets a user easily manipulate text and backg
 
 I believe we can all do better to make the web more accessible to people who need it. Accessibility isn't really that hard when you incorporate it from the very beginning of a project: the design phase. It's also not all that hard in general, we just need better educational tools. This is my first major step in educating myself so I can pass on the knowledge and educate others.
 
-## GIF Demonstration
-
-![Demonstration of the app's first version](/src/images/current.gif)
-
 ## Updates
 
 ## 2020.10.16
