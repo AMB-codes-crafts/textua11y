@@ -1,5 +1,7 @@
 # textua11y
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4ed083c3-f724-4a81-b178-cfb399ad8a9c/deploy-status)](https://app.netlify.com/sites/textua11y/deploys)
+
 ## What is it?
 
 textua11y is a web application that lets a user easily manipulate text and background colors to test their color contrasts for accessibility. For ease-of-use and scope reasons, the colors available are from the [Material Design color palette](https://material.io/tools/color/). This tool is a work in progress, and I plan to continually add features and make improvements as we go along.
